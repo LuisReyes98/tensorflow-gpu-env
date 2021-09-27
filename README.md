@@ -168,6 +168,8 @@ docker exec -it tensor_gpu bash
 
 [Helper that turns docker command into docker file](https://www.composerize.com/)
 
+[Gpu support with docker compose](https://docs.docker.com/compose/gpu-support/)
+
 ### Building docker image
 
 ```sh
