@@ -1,0 +1,3 @@
+# Compose file to use tensorflow with gpu and local files
+version: "3.8"
+
