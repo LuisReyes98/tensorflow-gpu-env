@@ -163,3 +163,81 @@ Connecting to restarted container
 ```sh
 docker exec -it tensor_gpu bash
 ```
+
+## Docker Compose
+
+[Helper that turns docker command into docker file](https://www.composerize.com/)
+
+### Building docker image
+
+```sh
+docker build --rm --tag tensor_gpu_image:dev .
+```
+
+Remove dangling images after build
+
+```sh
+docker image prune
+```
+
+Do NOT run unless SURE!!!
+
+```sh
+$docker image prune -a # this will remove even base images used as reference to local images
+```
+
+### Running docker compose
+
+**Creating** the service
+
+```sh
+docker-compose up
+```
+
+#### For user ids
+
+To run as a normal user not root (some libraries might have trouble installing)
+
+```sh
+UID=$(id -u) GID=$(id -g) docker-compose up
+```
+
+#### Compose use
+
+**Starting** the service
+
+```sh
+docker-compose start tensorflow
+```
+
+**Stoping** the service
+
+```sh
+docker-compose stop tensorflow
+```
+
+**restarting** the service to keep environment changes
+
+```sh
+docker-compose restart tensorflow
+```
+
+**Connecting** to the service in any scenario
+
+```sh
+docker exec -it tensor_gpu bash
+```
+
+Running to turn up **jupyter**
+
+```sh
+jupyter notebook --notebook-dir=/tf --ip 0.0.0.0 --no-browser --allow-root --NotebookApp.allow_origin='https://colab.research.google.com'
+```
+
+## Maintenance
+
+Check actual space of docker images in local
+
+```sh
+docker system df
+```

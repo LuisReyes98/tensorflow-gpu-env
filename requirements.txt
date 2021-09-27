@@ -1,0 +1,3 @@
+# al other python libraries I want
+pandas==1.*
+seaborn==0.11.*
