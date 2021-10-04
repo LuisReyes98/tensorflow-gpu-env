@@ -170,6 +170,12 @@ docker exec -it tensor_gpu bash
 
 [Gpu support with docker compose](https://docs.docker.com/compose/gpu-support/)
 
+Checking docker images
+
+```sh
+docker-compose ps
+```
+
 ### Building docker image
 
 ```sh
