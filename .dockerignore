@@ -1,2 +1,3 @@
 ./gpu_test
 ./docker_mount
+*.png
